@@ -4,10 +4,10 @@
 * CSS3
 
 # Demo image
-<img src="https://i.imgflip.com/36tc6t.gif" />
+![alt text](https://github.com/ma-e/UI-Assessment-AC/blob/master/ui-emma.jpg )
 
 # Demo video
-<img width="80%" src="https://i.imgflip.com/36tcsa.gif" />
+<img width="50%" src="https://i.imgflip.com/36tcsa.gif" />
 
 # Reference
 * https://www.w3schools.com/
