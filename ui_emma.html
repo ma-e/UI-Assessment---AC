@@ -1,0 +1,466 @@
+Emma 
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+    integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+    <style>
+            .bar {
+        margin-left: 10%;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        margin-right: 15px;
+        overflow: hidden;
+    }
+
+    .barleft {
+        float: left;
+        background: rgb(48, 199, 144);
+        color: white;
+        width: 50%;
+        font-size: 10px;
+        padding: 5px 5px 20px 5px;
+        height: 30px;
+    }
+
+    .barright {
+        background: rgb(93, 212, 226);
+        text-align: center;
+        color: white;
+        float: right;
+        width: 49.8%;
+        height: 30px;
+    }
+
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    /* Fixed sidenav, full height */
+    .sidenav {
+        height: 200%;
+        width: 80px;
+        /* position: fixed; */
+        z-index: 1;
+        top: 10;
+        left: 0;
+        background-color: rgb(84, 84, 84);
+        /* overflow-x: hidden; */
+        padding-top: 20px;
+    }
+
+    .sidenav a,
+    i {
+        padding: 5px 5px 8px 5px;
+        /* text-decoration: none; */
+        font-size: 10px;
+        color: rgb(236, 236, 236);
+        display: inline-block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        /* outline: none; */
+    }
+
+
+    /* Some media queries for responsiveness */
+    @media screen and (max-height: 500px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+
+    .page-navbar {
+        overflow: hidden;
+        background-color: rgb(236, 236, 236);
+        /* position: absolute; */
+        width: 100%;
+        padding: 5px 5px 8px 5px;
+    }
+
+    .page-navbar a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 5px 5px 8px 5px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .page-navbar button,
+    ul,
+    i {
+        float: right;
+    }
+
+    .testLine {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgb(188,188,188);
+        line-height: 0.1em;
+        margin: 60px 0 20px;
+    }
+
+    p span {
+        background: #fff;
+        padding: 0 10px;
+        color: rgb(144,144,144);
+    }
+
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        font-size: 15px;
+        outline: 0;
+        border-left: 4px solid #4CAF50;
+        border-right: 0.5px solid rgb(227,227,227);
+        border-top: 0.5px solid rgb(227,227,227);
+        border-bottom: none;
+    }
+
+    .accordion:after {
+        content: '»';
+        font-weight: bold;
+        float: left;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "↓";
+    }
+
+    .panel {
+        padding: 5px 5px 5px 5px;
+        background-color: #eee;
+        max-height: 0;
+        overflow: hidden;
+        border-left: 4px solid #4CAF50;
+        margin-bottom: 10px;
+        border-right: 0.5px solid rgb(227,227,227);
+        border-bottom: 0.5px solid rgb(227,227,227);
+    }
+
+    .codePad {
+        background-color: black;
+        color: #eee;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        padding: 15px 15px 15px 15px;
+        width: 100%;
+        height: 100px;
+        font-family: monospace;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    button:focus {
+        outline: 0;
+    }
+
+    .sidebar {
+        background-color: rgb(84, 84, 84); 
+        width:8%; 
+        margin-top: 0%; 
+        font-size: 10px; 
+        text-align: center;
+    }
+
+    .sidebars {
+        background-color: rgb(84, 84, 84); 
+        color:white ;
+        height: 53px;
+    }
+
+    .sidebars:hover .left-nav{
+        background-color: rgb(248, 249, 250);
+        color:#444;
+        font-weight: bold;
+    }
+    .sidebars:hover .sidebar-item{
+        background-color: rgb(248, 249, 250);
+        color:#444;
+        font-weight: bold;
+        height:53px;
+    }
+
+</style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black">
+        <a class="navbar-brand" href="#">
+            <img src="id.jpg" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        angristan
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">
+                            Action 1
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            Action 2
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            Action 3
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-auto"> 
+                <a class="navbar-brand" href="#">
+                    <img src="logo.jpg" />
+                </a> 
+            </ul>
+
+
+            <ul class="navbar-nav ">
+                <li class="nav-item dropdown">
+                    <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Updates
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">
+                            Action 1
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            Action 2
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            Action 3
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Support
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">
+                            Action 1
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            Action 2
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            Action 3
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <a class="navbar-brand" href="#">
+                <img style="width:80%;float:right" src="id.jpg" />
+            </a>
+        </nav>
+
+
+    <!-- side navbar -->
+
+    <div class="w3-sidebar sidebar">
+        <div class= "sidebars">
+            <i class="fa fa-tasks left-nav"></i>
+            <p class="sidebar-item">JOBS</p>
+        </div>
+        <div class= "sidebars">
+            <i class="fas fa-code-branch left-nav"> </i>
+            <p class="sidebar-item"> WORKFLOWS</p>
+        </div>
+        <div class= "sidebars">
+            <i class="fa fa-tasks left-nav"> </i>
+            <p class="sidebar-item">INSIGHTS</p>
+        </div>
+        <div class= "sidebars">
+             <i class="fa fa-plus-square left-nav"> </i>
+            <p class="sidebar-item">ADD PROJECTS</p>
+        </div>
+        <div class= "sidebars">
+            <i class="fas fa-user-friends left-nav"> </i>
+            <p class="sidebar-item">TEAM</p>
+        </div>    
+        <div class= "sidebars">
+             <i class="fa fa-cog left-nav"> </i>
+            <p class="sidebar-item">SETTINGS</p>
+        </div>
+
+    </div>
+
+    <!-- Page Content -->
+
+    <div id="jobs">
+    
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"
+            style="margin-left:8%; border:1px solid rgb(204, 204, 204);">
+            <div class="collapse navbar-collapse" style=" color:rgb(0,0,0);font-family:'emoji'">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-angle-double-right" style="color:rgb(0,0,0);">
+                                &nbsp;<font face="arial" color="#000000">Jobs</font></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-angle-double-right" style="color:rgb(0,0,0)">
+                                &nbsp; <font face="arial" color="#000000">angristan</font></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"><i class="fa fa-angle-double-right" style="color:rgb(0,0,0);">
+                                &nbsp; <font face="arial" color="#000000">ansible-caddy</font> </i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"><i class="fa fa-angle-double-right" style="color:rgb(0,0,0);">
+                                &nbsp; <font face="arial" color="#000000">master </font></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"><i class="fa fa-angle-double-right" style="color:rgb(0,0,0);">
+                                &nbsp; <font face="arial" color="#000000">6 (build)</font></i></a>
+                    </li>
+    
+                </ul>
+    
+                <form class="form-inline my-3 my-lg-0"><button style="font-size:15px; color:rgb(93,202,220); background-color: white; border:rgb(227,227,227);font-family: monospace;
+                                    type=" submit">2.0</button></form>
+                &nbsp; &nbsp;
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 fa" type="search" placeholder=" &#xf021; Return workflow"
+                        aria-label="Search">
+                    <button><i class="fa fa-angle-down" style="font-size:15px; color:black;"></i></button>
+                </form>
+                &nbsp; &nbsp;
+                <form class="form-inline my-2 my-lg-0"><i class="fa fa-cog" style="font-size:15px; color:black;"></i></form>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- process bar -->
+    <div class="bar">
+        <h3 class="barleft">
+            <p class="bar-left-item"> 0 <span style="float:right; background-color:rgb(48,199,144);">
+                    <i class="fas fa-check-circle"></i></span></p>
+            <p class="bar-left-item"> (00:37)</p>
+        </h3>
+        <h3 class="barright"> + </h3>
+        <p class="testLine"><span>TEST</span></p>
+    
+    
+        <!-- extending button 1  -->
+        <button class="accordion">&nbsp; <b>Signup envirenment</b><span style="float:right">00:08</span></button>
+        <div class="panel">
+            <div class="codePad">
+                <span style="float:right">Exit code: 0</span>
+                <p> $ #!/bin/bash -eo pipefail</p>
+                <p> ansible-lint --version <span class="fas fa-arrow-circle-down"
+                        style="float:right; margin-right:0px; background-color: black;font-size: 20px;"></span></p>
+                <p style="color:lightgrey"> ansible-lint 4.1.0</p>
+            </div>
+        </div>
+    
+        <!-- extending button 2  -->
+        <button class="accordion">&nbsp; <b>Checkout code</b><span style="float:right">00:00</span></button>
+        <div class="panel">
+            <div class="codePad">
+                <span style="float:right">Exit code: 0</span>
+                <p> $ #!/bin/bash -eo pipefail</p>
+                <p> ansible-lint --version <span class="fas fa-arrow-circle-down"
+                        style="float:right; margin-right:0px; background-color: black;font-size: 20px;"></span></p>
+                <p style="color:lightgrey"> ansible-lint 4.1.0</p>
+            </div>
+        </div>
+        
+        <!-- extending button 3  -->
+        <button class="accordion">&nbsp; <b>pip install ansible-lint</b><span style="float:right">00:25</span></button>
+        <div class="panel">
+            <div class="codePad">
+                <span style="float:right">Exit code: 0</span>
+                <p> $ #!/bin/bash -eo pipefail</p>
+                <p> ansible-lint --version <span class="fas fa-arrow-circle-down"
+                        style="float:right; margin-right:0px; background-color: black;font-size: 20px;"></span></p>
+                <p style="color:lightgrey"> ansible-lint 4.1.0</p>
+            </div>
+        </div>
+    
+        <!-- extending button 4 -->
+        <button class="accordion">&nbsp; <b>ansible-lint --version</b><span style="float:right">00:00</span></button>
+        <div class="panel">
+            <div class="codePad">
+                <span style="float:right">Exit code: 0</span>
+                <p> $ #!/bin/bash -eo pipefail</p>
+                <p> ansible-lint --version <span class="fas fa-arrow-circle-down"
+                        style="float:right; margin-right:0px; background-color: black;font-size: 20px;"></span></p>
+                <p style="color:lightgrey"> ansible-lint 4.1.0</p>
+            </div>
+        </div>
+    
+        <!-- extending button 5 -->
+        <button class="accordion">&nbsp; <b>ansible-lint</b><span style="float:right">00:02</span></button>
+        <div class="panel">
+            <div class="codePad">
+                <span style="float:right">Exit code: 0</span>
+                <p> $ #!/bin/bash -eo pipefail</p>
+                <p> ansible-lint --version <span class="fas fa-arrow-circle-down"
+                        style="float:right; margin-right:0px; background-color: black;font-size: 20px;"></span></p>
+                <p style="color:lightgrey"> ansible-lint 4.1.0</p>
+            </div>
+        </div>
+    
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+        </script>
+    
+    
+    </div>
+
+
+</html>
